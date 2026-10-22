@@ -1,2 +1,3 @@
 # AlgoristPortal
-Algorist Website and Demonstration Apps Portal
+
+Blazor WebAssembly (WASM) application that serves as a portal for the Algorist website and demonstration applications.
