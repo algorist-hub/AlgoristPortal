@@ -1,9 +1,15 @@
 <Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
   <Folder Name="/root/">
     <File Path=".github/workflows/main_algorist-portal.yml" />
     <File Path=".gitignore" />
     <File Path="LICENSE" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="AlgoristPortal.Client/AlgoristPortal.Client.csproj" />
   <Project Path="AlgoristPortal/AlgoristPortal.csproj" />
 </Solution>
