@@ -1,0 +1,75 @@
+
+.header {
+    --background-color: rgba(0, 0, 0, 0.8);
+    --heading-color: #ffffff;
+    --contrast-color: #ffffff;
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 10px 0;
+    transition: .5s;
+    z-index: 997
+}
+
+.header .logo {
+    line-height: 1
+}
+
+.header .logo img {
+    max-height: 50px;
+    margin-right: 8px
+}
+
+.header .logo h1 {
+    font-size: 32px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color)
+}
+
+.header .logo span {
+    color: var(--primary-color);
+    font-size: 32px
+}
+
+.header .btn-getstarted, .header .btn-getstarted:focus {
+    color: var(--contrast-color);
+    font-size: 14px;
+    padding: 8px 30px;
+    margin: 0 0 0 30px;
+    border-radius: 4px;
+    transition: .3s;
+    border: 2px solid var(--primary-color)
+}
+
+.header .btn-getstarted:focus:hover, .header .btn-getstarted:hover {
+    color: var(--default-color);
+    background: var(--primary-color)
+}
+
+.scrolled .header {
+    box-shadow: 0 0 18px rgba(0,0,0,.1)
+}
+
+.index-page .header {
+    --background-color: rgba(0, 0, 0, 0)
+}
+
+.index-page.scrolled .header {
+    --background-color: rgba(0, 0, 0, 0.8)
+}
+
+@media (max-width:1199px) {
+    .header .logo {
+        order: 1
+    }
+
+    .header .btn-getstarted {
+        order: 2;
+        margin: 0 15px 0 0;
+        padding: 6px 15px
+    }
+
+    .header .navmenu {
+        order: 3
+    }
+}

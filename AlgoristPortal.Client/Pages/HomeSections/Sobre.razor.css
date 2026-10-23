@@ -1,0 +1,30 @@
+
+.sobre .content h3 {
+    font-size: 1.75rem;
+    font-weight: 700
+}
+
+.sobre .content .fst-italic {
+    color: color-mix(in srgb,var(--default-color),var(--contrast-color) 50%)
+}
+
+.sobre .content ul {
+    list-style: none;
+    padding: 0
+}
+
+.sobre .content ul li {
+    padding: 10px 0 0;
+    display: flex
+}
+
+.sobre .content ul i {
+    color: var(--primary-color);
+    margin-right: .5rem;
+    line-height: 1.2;
+    font-size: 1.25rem
+}
+
+.sobre .content p:last-child {
+    margin-bottom: 0
+}
