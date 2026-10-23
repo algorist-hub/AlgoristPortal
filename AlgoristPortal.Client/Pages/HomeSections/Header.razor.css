@@ -79,10 +79,6 @@
 /*////// MENU PRINCIPAL //////*/
 
 
-.navmenu a, .navmenu a:focus {
-    color: var(--nav-color) !important;
-}
-
 @media (min-width:1200px) {
     .navmenu {
         padding: 0
@@ -101,6 +97,7 @@
     }
 
     .navmenu a, .navmenu a:focus {
+        color: var(--nav-color) !important;
         padding: 18px 15px;
         font-size: 16px;
         font-family: var(--nav-font);
@@ -110,6 +107,10 @@
         justify-content: space-between;
         white-space: nowrap;
         transition: .3s
+    }
+
+    .navmenu .active, .navmenu .active:focus, .navmenu li:hover > a {
+        color: var(--nav-active-color) !important
     }
 
     .navmenu a i, .navmenu a:focus i {
