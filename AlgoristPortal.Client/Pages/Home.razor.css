@@ -1,4 +1,23 @@
 
+@media (max-width:1199px) {
+    .section, section {
+        scroll-margin-top: 58px
+    }
+}
+
+@media (min-width:992px) {
+    .testimonials .testimonial-item p {
+        width: 80%
+    }
+}
+
+@media (max-width:575px) {
+    .portfolio .portfolio-filters li {
+        font-size: 14px;
+        margin: 0 0 10px
+    }
+}
+
 .stats .stats-item {
     padding: 10px
 }
