@@ -1,0 +1,45 @@
+
+.servicos .service-item {
+    background-color: var(--surface-color);
+    text-align: center;
+    border: 1px solid color-mix(in srgb,var(--default-color),transparent 85%);
+    padding: 80px 20px;
+    height: 100%;
+    transition: .3s ease-in-out
+}
+
+.servicos .service-item .icon {
+    background: var(--primary-color);
+    color: var(--contrast-color);
+    margin: 0 auto 20px;
+    width: 64px;
+    height: 64px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s
+}
+
+.servicos .service-item .icon i {
+    font-size: 28px;
+    transition: .3s ease-in-out
+}
+
+.servicos .service-item h3 {
+    font-weight: 700;
+    margin: 10px 0 15px;
+    font-size: 22px;
+    transition: .3s
+}
+
+.servicos .service-item p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0
+}
+
+.servicos .service-item:hover {
+    box-shadow: 0 0 25px 0 rgba(0,0,0,.1);
+    transform: translateY(-10px)
+}
