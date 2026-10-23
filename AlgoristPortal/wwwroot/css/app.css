@@ -5,12 +5,12 @@
     --heading-font: "Raleway",sans-serif;
     --nav-font: "Poppins",sans-serif;
 
-    --background-color: #ffffff;
+    --primary-color: #ffc451;
     --default-color: #444444;
     --heading-color: #151515;
-    --primary-color: #ffc451;
     --contrast-color: #312f2f;
-    --monospace-color: #312f2f;
+    --monospace-color: var(--primary-color);
+    --background-color: #ffffff;
 
     --link-primary-color:var(--primary-color);
     --link-hover-color: color-mix(in srgb,var(--primary-color),transparent 25%);
