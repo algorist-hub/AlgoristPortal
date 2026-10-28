@@ -1,4 +1,6 @@
 using AlgoristPortal.Components;
+using AlgoristPortal.MCP;
+using Microsoft.AspNetCore.Authentication;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,10 +8,22 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
-builder.Services
-    .AddMcpServer()
+builder.Services.AddMcpServer(options => options.ServerInfo = new()
+    {
+        Name = "MCP Server da Algorist",
+        Version = "0.0.1"
+    })
     .WithHttpTransport(options => options.Stateless = true)
     .WithToolsFromAssembly();
+
+builder.Services
+    .AddAuthentication()
+    .AddScheme<AuthenticationSchemeOptions, McpTokenAuthHandler>(McpTokenAuthHandler.Scheme, null);
+
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("Mcp", policy => policy
+        .AddAuthenticationSchemes(McpTokenAuthHandler.Scheme)
+        .RequireAuthenticatedUser());
 
 var app = builder.Build();
 
@@ -34,6 +48,9 @@ app.MapRazorComponents<App>()
     .AddInteractiveWebAssemblyRenderMode()
     .AddAdditionalAssemblies(typeof(AlgoristPortal.Client._Imports).Assembly);
 
-app.MapMcp("/mcp");
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapMcp("/mcp").RequireAuthorization("Mcp");
 
 app.Run();
