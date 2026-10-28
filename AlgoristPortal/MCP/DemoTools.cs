@@ -6,30 +6,32 @@ namespace AlgoristPortal.MCP;
 [McpServerToolType]
 public static class DemoTools
 {
-    [McpServerTool]
+    [McpServerTool(Name = "GetServerInfo", ReadOnly = true)]
     [Description("Retorna informações sobre o MCP Server.")]
-    public static object GetServerInfo ()
+    public static object GetServerInfo (McpServer server)
     {
+        var info = server.ServerOptions.ServerInfo;
+
         var serverTime = TimeZoneInfo.ConvertTime(DateTimeOffset.UtcNow, TimeZoneInfo.FindSystemTimeZoneById("America/Sao_Paulo"));
 
         return new
         {
-            Name = "MCP Server da Algorist",
-            Version = "0.0.1",
+            Name = info?.Name,
+            Version = info?.Version,
             Framework = ".NET 10",
             Language = "C#",
             ServerDateTimeNow = serverTime.ToString("yyyy-MM-dd HH:mm:ss zzz"),
         };
     }
 
-    [McpServerTool]
-    [Description("Gera um novo GUID.")]
-    public static string GenerateGuid ()
+    [McpServerTool(Name = "GenerateAlgoristGuid", ReadOnly = true)]
+    [Description("Gera um novo GUID da Algorist.")]
+    public static string GenerateAlgoristGuid ()
     {
         return Guid.NewGuid().ToString();
     }
 
-    [McpServerTool]
+    [McpServerTool(Name = "ConvertTemperature", ReadOnly = true)]
     [Description("Converte uma temperatura entre Celsius, Fahrenheit e Kelvin.")]
     public static double ConvertTemperature (
         [Description("Temperatura de origem")] double value,

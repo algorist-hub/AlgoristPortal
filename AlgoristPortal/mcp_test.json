@@ -1,0 +1,36 @@
+{
+  "url": "https://localhost:7029/mcp",
+  "insecure": true,
+  "timeout": 15,
+  "token_env": "Mcp:Token",
+  "expect": {
+    "tools": [
+      "GetServerInfo",
+      "GenerateAlgoristGuid",
+      "ConvertTemperature"
+    ],
+    "server_name": "MCP Server da Algorist",
+    "server_version": "0.0.1"
+  },
+  "tests": [
+    {
+      "name": "GetServerInfo responde sem erro",
+      "tool": "GetServerInfo",
+      "arguments": {}
+    },
+    {
+      "name": "GenerateAlgoristGuid responde sem erro",
+      "tool": "GenerateAlgoristGuid",
+      "arguments": {}
+    },
+    {
+      "name": "ConvertTemperature responde sem erro",
+      "tool": "ConvertTemperature",
+      "arguments": {
+        "value": 100,
+        "from": "C",
+        "to": "K"
+      }
+    }
+  ]
+}
