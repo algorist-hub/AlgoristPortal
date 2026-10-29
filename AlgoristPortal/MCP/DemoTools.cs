@@ -1,5 +1,7 @@
 ﻿using ModelContextProtocol.Server;
 using System.ComponentModel;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace AlgoristPortal.MCP;
 
@@ -24,11 +26,22 @@ public static class DemoTools
         };
     }
 
-    [McpServerTool(Name = "GenerateAlgoristGuid", ReadOnly = true)]
-    [Description("Generates a new Algorist GUID.")]
-    public static string GenerateAlgoristGuid ()
+    [McpServerTool(Name = "GenerateAlgoristHashFromWord", ReadOnly = true)]
+    [Description("Generates an Algorist hash from a word.")]
+    public static string GenerateAlgoristHashFromWord ([Description("Word to hash")] string palavra)
     {
-        return Guid.NewGuid().ToString();
+        ArgumentNullException.ThrowIfNull(palavra);
+
+        palavra += "_algorist";
+
+        byte[] bytes = Encoding.UTF8.GetBytes(palavra);
+        byte[] hash = SHA256.HashData(bytes);
+
+        var sb = new StringBuilder(hash.Length * 2);
+        foreach (byte b in hash)
+            sb.Append(b.ToString("x2"));
+
+        return sb.ToString();
     }
 
     [McpServerTool(Name = "ConvertTemperature", ReadOnly = true)]

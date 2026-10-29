@@ -6,7 +6,7 @@
   "expect": {
     "tools": [
       "GetServerInfo",
-      "GenerateAlgoristGuid",
+      "GenerateAlgoristHashFromWord",
       "ConvertTemperature"
     ],
     "server_name": "Algorist MCP Server",
@@ -19,9 +19,11 @@
       "arguments": {}
     },
     {
-      "name": "GenerateAlgoristGuid response without errors",
-      "tool": "GenerateAlgoristGuid",
-      "arguments": {}
+      "name": "GenerateAlgoristHashFromWord response without errors",
+      "tool": "GenerateAlgoristHashFromWord",
+      "arguments": {
+        "palavra": "testword"
+      }
     },
     {
       "name": "ConvertTemperature response without errors",

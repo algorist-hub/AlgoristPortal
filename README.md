@@ -21,13 +21,28 @@ This distinction is intentional: the project demonstrates practical development 
 
 # Demonstration Applications
 
+
 ## MCP Server
 
 The MCP Server is a demonstration application that provides a set of tools to A.I. agents.
 
+
 ### Provided Demonstration Tools
 
-1. GetServerInfo: Returns information about the Algorist Server.
-2. GenerateAlgoristGuid: Generates a unique identifier (GUID).
-3. ConvertTemperature: Converts temperature values between Kelvin, Celsius and Fahrenheit.
+
+#### GetServerInfo
+
+Returns information about the Algorist Server.
+
+
+#### GenerateAlgoristHashFromWord
+
+Generates a hash (SHA256) from an input word joined with "_algorist".
+
+The result could be checked in https://emn178.github.io/online-tools/sha256.html
+
+
+#### ConvertTemperature
+
+Converts temperature values between Kelvin, Celsius and Fahrenheit.
 
