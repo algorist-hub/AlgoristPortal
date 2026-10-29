@@ -21,7 +21,7 @@ public sealed class McpTokenAuthHandler (
     {
         var expected = config["Mcp:Token"];
         if (string.IsNullOrWhiteSpace(expected))
-            return Task.FromResult(AuthenticateResult.Fail("Token do MCP não configurado."));
+            return Task.FromResult(AuthenticateResult.Fail("MCP Server Token not configured."));
 
         if (!Request.Headers.TryGetValue("Authorization", out var header))
             return Task.FromResult(AuthenticateResult.NoResult());
@@ -29,14 +29,14 @@ public sealed class McpTokenAuthHandler (
         if (!AuthenticationHeaderValue.TryParse(header, out var auth) ||
             !string.Equals(auth.Scheme, "Bearer", StringComparison.OrdinalIgnoreCase) ||
             string.IsNullOrEmpty(auth.Parameter))
-            return Task.FromResult(AuthenticateResult.Fail("Cabeçalho Authorization inválido."));
+            return Task.FromResult(AuthenticateResult.Fail("Invalid Authorization header."));
 
         // Compara hashes em tempo constante (evita timing attack e vazamento de tamanho)
         var received = SHA256.HashData(Encoding.UTF8.GetBytes(auth.Parameter));
         var wanted = SHA256.HashData(Encoding.UTF8.GetBytes(expected));
 
         if (!CryptographicOperations.FixedTimeEquals(received, wanted))
-            return Task.FromResult(AuthenticateResult.Fail("Token inválido."));
+            return Task.FromResult(AuthenticateResult.Fail("Invalid Token."));
 
         var identity = new ClaimsIdentity(
             [new Claim(ClaimTypes.Name, "mcp-client")], Scheme);
