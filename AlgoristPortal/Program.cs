@@ -10,8 +10,8 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddMcpServer(options => options.ServerInfo = new()
     {
-        Name = "MCP Server da Algorist",
-        Version = "0.0.1"
+        Name = "Algorist MCP Server",
+        Version = "1.0.0"
     })
     .WithHttpTransport(options => options.Stateless = true)
     .WithToolsFromAssembly();
