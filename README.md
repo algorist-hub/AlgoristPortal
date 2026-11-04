@@ -17,32 +17,3 @@ These choices are appropriate for the platform's purpose: presenting the company
 Production applications with larger teams, higher traffic, stricter availability requirements, or more complex business domains would require a more robust architecture.
 Depending on the context, that could include stronger separation of responsibilities, dedicated infrastructure and deployment strategies, resilient integrations, comprehensive observability, advanced security controls, and scalability mechanisms.
 This distinction is intentional: the project demonstrates practical development capabilities while recognizing that architecture should be adapted to the requirements, risks, and scale of each real-world solution.
-
-
-# Demonstration Applications
-
-
-## MCP Server
-
-The MCP Server is a demonstration application that provides a set of tools to A.I. agents.
-
-
-### Provided Demonstration Tools
-
-
-#### GetServerInfo
-
-Returns information about the Algorist Server.
-
-
-#### GenerateAlgoristHashFromWord
-
-Generates a hash (SHA256) from an input word joined with "_algorist".
-
-The result could be checked in https://emn178.github.io/online-tools/sha256.html
-
-
-#### ConvertTemperature
-
-Converts temperature values between Kelvin, Celsius and Fahrenheit.
-
