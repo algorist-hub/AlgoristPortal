@@ -11,13 +11,6 @@
     }
 }
 
-@media (max-width:575px) {
-    .portfolio .portfolio-filters li {
-        font-size: 14px;
-        margin: 0 0 10px
-    }
-}
-
 .stats .stats-item {
     padding: 10px
 }
@@ -326,7 +319,7 @@
     height: auto
 }
 
-.clients .swiper-pagination, .portfolio-details .portfolio-details-slider .swiper-pagination, .testimonials .swiper-pagination {
+.clients .swiper-pagination, .swiper-pagination, .testimonials .swiper-pagination {
     margin-top: 20px;
     position: relative
 }
@@ -374,148 +367,4 @@
     font-size: 15px;
     color: color-mix(in srgb,var(--default-color),transparent 20%);
     margin: 0
-}
-
-.portfolio .portfolio-filters li.filter-active, .portfolio .portfolio-filters li:hover, .service-details .services-list a.active {
-    color: var(--contrast-color);
-    background-color: var(--primary-color)
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link:hover, .portfolio .portfolio-item .portfolio-info .preview-link:hover, .service-details .download-catalog a:hover {
-    color: var(--primary-color)
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-    color: color-mix(in srgb,var(--default-color),transparent 30%)
-}
-
-.portfolio .portfolio-filters {
-    padding: 0;
-    margin: 0 auto 20px;
-    list-style: none;
-    text-align: center
-}
-
-.portfolio .portfolio-filters li {
-    cursor: pointer;
-    padding: 8px 20px 10px;
-    margin: 0 0 5px;
-    font-size: 15px;
-    line-height: 1;
-    border-radius: 4px;
-    transition: .3s ease-in-out
-}
-
-.portfolio .portfolio-filters li:first-child {
-    margin-left: 0
-}
-
-.portfolio .portfolio-filters li:last-child {
-    margin-right: 0
-}
-
-.portfolio .portfolio-item, .team .team-member .member-img {
-    position: relative;
-    overflow: hidden
-}
-
-.portfolio .portfolio-item .portfolio-info {
-    opacity: 0;
-    position: absolute;
-    left: 12px;
-    right: 12px;
-    bottom: -100%;
-    z-index: 3;
-    transition: .5s ease-in-out;
-    background: color-mix(in srgb,var(--background-color),transparent 10%);
-    padding: 15px
-}
-
-.portfolio .portfolio-item .portfolio-info h4 {
-    font-size: 18px;
-    font-weight: 600;
-    padding-right: 50px
-}
-
-.portfolio .portfolio-item .portfolio-info p {
-    font-size: 14px;
-    margin-bottom: 0;
-    padding-right: 50px
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link, .portfolio .portfolio-item .portfolio-info .preview-link {
-    position: absolute;
-    right: 50px;
-    font-size: 24px;
-    top: calc(50% - 14px);
-    color: color-mix(in srgb,var(--default-color),transparent 30%);
-    transition: .3s;
-    line-height: 0
-}
-
-.portfolio .portfolio-item .portfolio-info .details-link {
-    right: 14px;
-    font-size: 28px
-}
-
-.portfolio .portfolio-item:hover .portfolio-info {
-    opacity: 1;
-    bottom: 0
-}
-
-.portfolio-details .portfolio-details-slider img {
-    width: 100%
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    background-color: color-mix(in srgb,var(--default-color),transparent 85%);
-    opacity: 1
-}
-
-.portfolio-details .portfolio-info {
-    padding: 30px;
-    box-shadow: 0 0 30px rgba(0,0,0,.1)
-}
-
-.portfolio-details .portfolio-info h3 {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid color-mix(in srgb,var(--default-color),transparent 85%)
-}
-
-.portfolio-details .portfolio-info ul, .service-details ul {
-    list-style: none;
-    padding: 0;
-    font-size: 15px
-}
-
-.portfolio-details .portfolio-info ul li + li {
-    margin-top: 10px
-}
-
-.portfolio-details .portfolio-description {
-    padding-top: 30px
-}
-
-.portfolio-details .portfolio-description h2 {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px
-}
-
-.portfolio-details .portfolio-description p {
-    padding: 0;
-    color: color-mix(in srgb,var(--default-color),transparent 30%)
-}
-
-.portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-    background-color: var(--primary-color)
-}
-
-.portfolio-details .portfolio-info, .service-details .service-box, .service-details .services-list, .team .team-member {
-    background-color: var(--surface-color)
 }

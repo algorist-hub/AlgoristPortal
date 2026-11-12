@@ -43,3 +43,12 @@
     box-shadow: 0 0 25px 0 rgba(0,0,0,.1);
     transform: translateY(-10px)
 }
+
+.service-details .services-list a.active {
+    color: var(--contrast-color);
+    background-color: var(--primary-color)
+}
+
+.service-details .download-catalog a:hover {
+    color: var(--primary-color)
+}
