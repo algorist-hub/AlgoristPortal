@@ -1,4 +1,5 @@
 using AlgoristPortal.Components;
+using AlgoristPortal.Endpoints;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,9 @@ app.UseHttpsRedirection();
 app.UseAntiforgery();
 
 app.MapStaticAssets();
+
+app.MapDemoAppsEndpoints();
+
 app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode()
     .AddInteractiveWebAssemblyRenderMode()
