@@ -2,7 +2,7 @@
 :root {
     --default-font: Roboto,"Roboto","Helvetica Neue",system-ui,-apple-system,"Segoe UI",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     --monospace-font: "Roboto Mono",monospace;
-    --heading-font: "Raleway",sans-serif;
+    --heading-font: "Poppins",sans-serif;
     --nav-font: "Poppins",sans-serif;
 
     --primary-color: #ffc451;

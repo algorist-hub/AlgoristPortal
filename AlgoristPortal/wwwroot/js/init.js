@@ -51,14 +51,23 @@
 
   // ---- Cliques (delegados, na fase de captura, antes do Blazor interceptar o link) ----
   document.addEventListener("click", (e) => {
-    // Menu mobile (ajuste o seletor ao do seu Header)
-    const toggle = e.target.closest(".mobile-nav-toggle");
-    if (toggle) {
-      const active = body.classList.toggle("mobile-nav-active");
-      toggle.classList.toggle("bi-list", !active);
-      toggle.classList.toggle("bi-x", active);
-      return;
-    }
+  // Menu mobile (ajuste o seletor ao do seu Header)
+  const toggle = e.target.closest(".mobile-nav-toggle");
+  if (toggle) {
+    const active = body.classList.toggle("mobile-nav-active");
+    toggle.classList.toggle("bi-list", !active);
+    toggle.classList.toggle("bi-x", active);
+    return;
+  }
+
+  // Dropdown (DemoApps): abre/fecha o submenu SEM fechar o menu mobile
+  const dropdownLink = e.target.closest("#navmenu li.dropdown > a");
+  if (dropdownLink) {
+    e.preventDefault(); // não navega para "#"
+    dropdownLink.classList.toggle("active");
+    dropdownLink.nextElementSibling?.classList.toggle("dropdown-active");
+    return; // sai antes do código que fecha o menu
+  }
 
     // Links de âncora na mesma página, incluindo o botão scroll-top (href="#")
     const link = e.target.closest("a[href]");
